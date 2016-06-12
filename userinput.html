@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="shortcut icon" type="image/png" href="icons/favicon.png"/>
 </head>
 <body>
   <nav class="red lighten-2" role="navigation">
@@ -42,6 +44,30 @@
           <label for="destination">Destination</label>
         </div>
       </div>
+      
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Type your car's mile/gallon." id="mpg" type="text" class="validate" name="mpg">
+          <label for="destination">Car's Mile Per Gallon</label>
+        </div>
+      
+          <label>Browser Select</label>
+  <select class="browser-default col s6" id="gastype" name="gastype">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">Regular</option>
+    <option value="2">Midgrade</option>
+    <option value="3">Premium</option>
+    <option value="4">Diesel</option>
+  </select>
+      </div>
+
+     <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Type in your weight." id="weightUser" type="text" class="validate" name="weightUser">
+          <label for="weightUser">Weight</label>
+        </div>
+      </div>
+   
        <div class="row">
         <button href="summary.html" type="submit" id="create-summary-button" class="btn-large waves-effect waves-light teal lighten-1" >Create Summary</button>
       </div>
@@ -59,14 +85,15 @@
             <div class="card-content white-text">
               <span class="card-title">Driving</span>
               <ul>
-                <li><img src="icons/time.png" style="width:30px;height:30px;" hspace=10px;>time is</li><br>
-                <li id="distancetraveled"><img src="icons/distance.png" style="width:30px;height:30px;" hspace=10px;>distance is</li><br>
-                <li><img src="icons/gasprice.png" style="width:30px;height:30px;" hspace=10px;>gas price is</li><br>
-                <li><img src="icons/caloriesburnt.png" style="width:30px;height:30px;" hspace=10px;>calories burnt is</li><br>
-                <li><img src="icons/carbonfootprint.png" style="width:30px;height:30px;" hspace=10px;>carbon footprint is</li>
+              
+               <li id="DRIVINGtime"><i class="fa fa-3x fa-clock-o" aria-hidden="true"></i>Time is</li><br>
+                <li id="DRIVINGdistancetraveled"><i class="fa fa-3x fa-map-marker" aria-hidden="true"></i>Distance is</li><br>
+                <li id="DRIVINGgasprice"><i class="fa fa-3x fa-usd" aria-hidden="true"></i>Gas price is </li><br>
+                <li><i class="fa fa-3x fa-heart" aria-hidden="true"></i>Calories burnt are 0 calories</li><br>
+                <li id="DRIVINGcarbon"><i class="fa fa-3x fa-globe" aria-hidden="true"></i>Carbon footprint is</li>
               </ul>
             </div>
-            <div class="card-action">
+            <div class="card-action" id="drivingmap">
               <a href="#">Click for this way.</a>
             </div>
           </div>
@@ -74,16 +101,16 @@
          <div class="col s4">
           <div class="card red lighten-3">
             <div class="card-content white-text">
-              <span class="card-title">Biking</span>
+              <span class="card-title">Bicycling</span>
               <ul>
-                <li i><img src="icons/time.png" style="width:30px;height:30px;" hspace=10px;>time is</li><br>
-                <li><img src="icons/distance.png" style="width:30px;height:30px;" hspace=10px;>distance is</li><br>
-                <li><img src="icons/gasprice.png" style="width:30px;height:30px;" hspace=10px;>gas price is</li><br>
-                <li><img src="icons/caloriesburnt.png" style="width:30px;height:30px;" hspace=10px;>calories burnt is</li><br>
-                <li><img src="icons/carbonfootprint.png" style="width:30px;height:30px;" hspace=10px;>carbon footprint is</li>
+               <li id="BICYCLINGtime"><i class="fa fa-3x fa-clock-o" aria-hidden="true"></i>Time is</li><br>
+                <li id="BICYCLINGdistancetraveled"><i class="fa fa-3x fa-map-marker" aria-hidden="true"></i>Distance is</li><br>
+                <li><i class="fa fa-3x fa-usd" aria-hidden="true"></i>Gas price is $0.00</li><br>
+                <li id="BICYCLINGcalories"><i class="fa fa-3x fa-heart" aria-hidden="true"></i>Calories burnt is</li><br>
+                <li><i class="fa fa-3x fa-globe" aria-hidden="true"></i>Carbon footprint are 0 lbs of CO2</li>
               </ul>
             </div>
-            <div class="card-action">
+            <div class="card-action" id="bikingmap">
               <a href="#">Click for this way.</a>
             </div>
           </div>
@@ -93,14 +120,14 @@
             <div class="card-content white-text">
               <span class="card-title">Walking</span>
               <ul>
-                <li><img src="icons/time.png" style="width:30px;height:30px;" hspace=10px;>time is</li><br>
-                <li><img src="icons/distance.png" style="width:30px;height:30px;" hspace=10px;>distance is</li><br>
-                <li><img src="icons/gasprice.png" style="width:30px;height:30px;" hspace=10px;>gas price is</li><br>
-                <li><img src="icons/caloriesburnt.png" style="width:30px;height:30px;" hspace=10px;>calories burnt is</li><br>
-                <li><img src="icons/carbonfootprint.png" style="width:30px;height:30px;" hspace=10px;>carbon footprint is</li>
+               <li id="WALKINGtime"><i class="fa fa-3x fa-clock-o" aria-hidden="true"></i>Time is</li><br>
+                <li id="WALKINGdistancetraveled"><i class="fa fa-3x fa-map-marker" aria-hidden="true"></i>Distance is</li><br>
+                <li><i class="fa fa-3x fa-usd" aria-hidden="true"></i>Gas price is $0.00</li><br>
+                <li id="WALKINGcalories"><i class="fa fa-3x fa-heart" aria-hidden="true"></i>Calories burnt is</li><br>
+                <li><i class="fa fa-3x fa-globe" aria-hidden="true"></i>Carbon footprint are 0 lbs of CO2</li>
               </ul>
             </div>
-            <div class="card-action">
+            <div class="card-action" id="walkingmap">
               <a href="#">Click for this way.</a>
             </div>
           </div>
@@ -108,10 +135,16 @@
       </div>
         <div style="width:100%; height:10%; font-color=black;" id="distance_direct"></div>
 	      <div style="width:100%; height:10%; font-color=black;" id="distance_road"></div>
-        <div id = "map_canvas" style="width: 500px;height: 500px;"></div>
+        
   </div>
+  <center>
+   <div class="row"style="width: 600px;">
+         <div id="map" style="width: 300px; height: 400px; float: left;"></div> 
+         <div id="panel" style="width: 300px; height: 400px; float: right; overflow: scroll;"></div> 
+      </div>
+  </center>
 
-<footer class="page-footer red lighten-2">
+<footer class="page-footer red lighten-2 row" style="float: bottom;">
     <div class="white-text">
       <div class="container">
       Made by Aashia Mehta and Shiv Ansal
@@ -124,10 +157,12 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?AIzaSyAgia3GSTTJx4-6nLyyTnD949qWj5jdqeE"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?AIzaSyAgia3GSTTJx4-6nLyyTnD949qWj5jdqeE&sensor=false&libraries=places"></script>
   <script src="js/main.js"></script>
   <script>
     $(document).ready(function(){
+      var autocomplete = new google.maps.places.Autocomplete($('#orgin')[0]);
+      var autocomplete2 = new google.maps.places.Autocomplete($('#destination')[0]);
 
       var location1;
       var location2;
@@ -139,14 +174,27 @@
       var geocoder;
       var map;
       var distance;
+      var mpg;
+      var gastype;
+      var weightUser;
+      var carbonFootprint;
+      var type;
 
-      function initialize(){ //Find the two locations(Orgin and Destination)
+      function initialize(transportationType){ //Find the two locations(Orgin and Destination)
         geocoder = new google.maps.Geocoder(); //geocoder to convert addreess to long/latitude
 
         orgin = $("#orgin").val(); //take user input for different values
         destination = $("#destination").val();
+        mpg = $("#mpg").val();
+        gastype = $("#gastype").val();
+        weightUser = $("#weightUser").val();
+
+
         console.log('origin', orgin);
         console.log('destination', destination);
+        console.log('mpg',mpg);
+        console.log('gastype',gastype);
+        console.log('weightUser',weightUser);
 
         if(geocoder){//converting into coordinatates
           geocoder.geocode( { 'address': orgin}, function(results)
@@ -156,12 +204,12 @@
           geocoder.geocode( { 'address': destination}, function(results)
           {
             location2 = results[0].geometry.location;
-            displayMap(); //in order to show the map
+            displayMap(transportationType); //in order to show the map
           });
           }
         }
 
-        function displayMap(){
+        function displayMap(transportationType){
           mapCenterLong = (location1.lat()+location2.lat())/2;
           mapCenterLast = (location1.lng()+location2.lng())/2
           mapCenter = new google.maps.LatLng(mapCenterLong,mapCenterLast);
@@ -173,7 +221,7 @@
               mapTypeId: google.maps.MapTypeId.ROADMAP
             };
 
-            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+         //   map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
             //route
             directionsService = new google.maps.DirectionsService();
@@ -187,7 +235,7 @@
             var request = {
                 origin:orgin,
                 destination:destination,
-                travelMode: google.maps.DirectionsTravelMode.DRIVING
+                travelMode: google.maps.DirectionsTravelMode[transportationType]
             };
 
             directionsService.route(request, function(response, status)
@@ -195,10 +243,47 @@
             if (status == google.maps.DirectionsStatus.OK)
             {
               directionsDisplay.setDirections(response);
-              distance = "The distance between the two points on the chosen route is: "+response.routes[0].legs[0].distance.text;
-              distance += "<br/>The aproximative driving time is: "+response.routes[0].legs[0].duration.text;
-              document.getElementById("distance_road").innerHTML = distance;
+              distance = response.routes[0].legs[0].distance.text;
+              var time = response.routes[0].legs[0].duration.text;
+              document.getElementById(transportationType+"distancetraveled").innerHTML += " "+distance;
+              document.getElementById(transportationType+"time").innerHTML += " "+time;
+              console.log(distance);
+              var gallons=(parseFloat(distance))/(parseFloat(mpg));
+              var gasMoney;
+              var caloriesBurnedWalk;
+              var caloriesBurnedBike;
+              if(gastype==1)
+                gasMoney=gallons*2.69; 
+              else if(gastype==2)
+                gasMoney=gallons*2.79;
+              else if(gastype==3)
+                gasMoney=gallons*2.89;
+              else if(gastype==4)
+                gasMoney=gallons*2.69;
+              carbonFootprint=parseFloat(gallons)*19.64;
+
+              if(transportationType == 'DRIVING'){
+                $('#DRIVINGgasprice').html($('#DRIVINGgasprice').html()+"$"+gasMoney.toFixed(2));
+               $('#DRIVINGcarbon').html($('#DRIVINGcarbon').html()+" "+carbonFootprint+" lbs of CO2");
+               console.log(carbonFootprint);
+             }
+              else
+                $('#'+transportationType+'gasprice').html($('#'+transportationType+'gasprice').html()+"0");
+              console.log("gas$ "+gasMoney);
+              console.log("gallons is "+gallons);
+              caloriesBurnedWalk=(parseFloat(weightUser)*0.029)*parseFloat(time);
+              caloriesBurnedBike=(parseFloat(weightUser)*0.048)*parseFloat(time);
+              console.log(caloriesBurnedWalk);
+              console.log(caloriesBurnedBike);
+              if(transportationType == 'BICYCLING')
+                $('#BICYCLINGcalories').html($('#BICYCLINGcalories').html()+" "+caloriesBurnedBike.toFixed(2)+" calories");
+               else if(transportationType == 'WALKING')
+                $('#WALKINGcalories').html($('#WALKINGcalories').html()+" "+caloriesBurnedWalk.toFixed(2)+" calories");
+             // window.open("index.html");
+                
                }
+             
+               
             });
 
               // create the markers for the two locations
@@ -234,7 +319,7 @@
               // create info boxes for the two markers
               var infowindow1 = new google.maps.InfoWindow({
                 content: orgintext
-              });
+              }); 
               var infowindow2 = new google.maps.InfoWindow({
                 content: destinationtext
               });
@@ -247,7 +332,7 @@
                 });
 
                 // compute distance between the two points
-                var R = 6371;
+                /*var R = 6371;
                 var distanceLat = toRad(location2.lat()-location1.lat());
                 var distanceLon = toRad(location2.lng()-location1.lng());
 
@@ -260,7 +345,7 @@
                 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
                 var d = R * c;
 
-                document.getElementById("distancetraveled").innerHTML += d;
+                document.getElementById("distancetraveled").innerHTML += d;*/
               }
           function toRad(deg){
             return deg * Math.PI/180;
@@ -271,10 +356,51 @@
         var name = $('#name').val();
         var orgin = $('#starting_point').val();
         var destination = $('#destination').val();
+        var mpg = $('#mpg').val();
         $('#userinputPage').hide();
         $('#summaryPage').show();
-        initialize();
+        initialize('DRIVING');
+        initialize('WALKING');
+        initialize('BICYCLING');
+        $('#walkingmap').click(function(){
+          maping("WALKING");
+        });
+
+        $('#bikingmap').click(function(){
+          maping('BICYCLING');
+        });
+
+        $('#drivingmap').click(function(){
+          maping('DRIVING');
+
+        });
       });
+      function maping(type){
+        var directionsService = new google.maps.DirectionsService();
+         var directionsDisplay = new google.maps.DirectionsRenderer();
+    
+         var map = new google.maps.Map(document.getElementById('map'), {
+           zoom:7,
+           mapTypeId: google.maps.MapTypeId.ROADMAP
+         });
+        
+         directionsDisplay.setMap(map);
+         directionsDisplay.setPanel(document.getElementById('panel'));
+          orgin = $("#orgin").val(); //take user input for different values
+        destination = $("#destination").val();
+        //alert(orgin+destination+'asdf');
+         var request = {
+           origin: orgin, 
+           destination: destination,
+           travelMode: google.maps.DirectionsTravelMode[type]
+         };
+    
+         directionsService.route(request, function(response, status) {
+           if (status == google.maps.DirectionsStatus.OK) {
+             directionsDisplay.setDirections(response);
+           }
+         });
+       }
     });
   </script>
   </body>
