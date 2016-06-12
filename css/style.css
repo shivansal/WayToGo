@@ -12,7 +12,10 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
-i {
+#i {
 	color: #eeeeee;
 	padding-right: 10px;
+}
+i{
+	color: #e57373;
 }
