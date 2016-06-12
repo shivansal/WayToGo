@@ -133,6 +133,16 @@
           </div>
         </div>
       </div>
+       <div class="row">
+        <div class="col s12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Recommendation</span>
+              <p id="rec"></p>
+            </div>
+          </div>
+        </div>
+      </div>
         <div style="width:100%; height:10%; font-color=black;" id="distance_direct"></div>
 	      <div style="width:100%; height:10%; font-color=black;" id="distance_road"></div>
         
@@ -374,7 +384,27 @@
           maping('DRIVING');
 
         });
+          var walking=false;
+          var driving=false;
+          var biking = false;
+
+          if(distance<2)
+            walking = true;
+          else if(distance>10)
+            driving = true;
+         else{
+            biking=true;
+          }
+
+        if(walking)
+          $('#rec').html($('#rec').html()+"Because your route's distance is less than two miles, walking would be the best mode of transportation. Walking reduces your carbon footprint, burns calories, and does not have a gas price. However, if you are in a time constraint we recommend biking.");
+        else if(driving)
+          $('#rec').html($('#rec').html()+"Because your route's distance is above ten miles, driving would be the best mode of transportation. Nonetheless, driving comes with the risk of paying for gas and increasing your carbon footprint.");
+        else if(biking)
+          $('#rec').html($('#rec').html()+"Bicycling would be the best mode of transportation in this case. You will reduce your carbon footprint, burn calories, and avoid paying for gas.");
       });
+
+
       function maping(type){
         var directionsService = new google.maps.DirectionsService();
          var directionsDisplay = new google.maps.DirectionsRenderer();
